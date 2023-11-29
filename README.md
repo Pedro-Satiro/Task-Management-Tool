@@ -1,6 +1,7 @@
 # Task-Management-Tool  P3
 
 Funções:
+
 [ ] • Criação e Atribuição de Tarefas: Os usuários podem criar e atribuir tarefas aos membros da equipe;   
 
 [ ] • Definição de Prazos e Prioridades: Definição de prazos e prioridades para tarefas;  
