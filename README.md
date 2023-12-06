@@ -33,9 +33,10 @@
 |  5   | Definir dono da tarefa   |  Usuário pode definir quem na equipe é o responsável pela tarefa   |
 |  6   | Visualização de tarefas   |  Usuário pode visualizar quais são suas task, e caso seja o gestor pode visualizar todas as tarefas da equipe   |
 |  7   | Atualização de status das tarefas   |  O dono da tarefa ou gestor da equipe pode atualizar a situação da tarefa   |
-|  8   | Notificação ao dono da tarefa   |  Caso o prazo da tarefa esteja chegando ele é informado quando realizar o login   |
-|  9   | Gerar relatório   |  Usuário consegue gerar um relatório com a situação das tarefas. caso seja o gestor ele pode visualizar toda a situação da equipe, como quantidade de tarefas atrasadas com próxima do prazo |
-|  10  | Finalizar o progama   | Usuário pode encerar o progama   |
+|  8   | Atualizar os dados da tarefa     | Usuario pode alterar os dados da tarefa que n seja status    |
+|  9   | Notificação ao dono da tarefa   |  Caso o prazo da tarefa esteja chegando ele é informado quando realizar o login   |
+|  10   | Gerar relatório   |  Usuário consegue gerar um relatório com a situação das tarefas. caso seja o gestor ele pode visualizar toda a situação da equipe, como quantidade de tarefas atrasadas com próxima do prazo |
+|  11  | Finalizar o progama   | Usuário pode encerar o progama   |
 
 
 
