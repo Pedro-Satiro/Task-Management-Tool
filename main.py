@@ -12,7 +12,7 @@ def consulta():
 def criar_equipe():
    equipe = {}
 
-   equipe['nome' ] = input("Digite o nome da equipe: ")
+   equipe['nome'] = input("Digite o nome da equipe: ")
 
    qnt_integrantes = int(input("Qual o tamanho da equipe: "))
    equipe['integrantes'] = []
@@ -29,8 +29,6 @@ def criar_equipe():
    return equipe
 
     
-
-
 
 def login():
     print("fazendo login")
