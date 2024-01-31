@@ -39,6 +39,7 @@ def make_login(member: Member):
         #try:
             print("\nEscolha uma das opçoes: ")
             print("0 - Voltar")
+            print("9 - Mudar Senha")
             print("1 - Criar tarefas")
             print("2 - Consultar tarefas")
             print("3 - Alterar tarefas")
@@ -53,6 +54,9 @@ def make_login(member: Member):
 
             if opcao == 0:
                 return
+            elif opcao == 9:
+                member.alterar_senha()
+                
             elif  opcao == 1:
                 title = input("Digite o nome da tarefa: ")
                 description = input("Digite a descrição da tarefa: ")
