@@ -39,7 +39,7 @@ def make_login(member: Member):
         #try:
             print("\nEscolha uma das opçoes: ")
             print("0 - Voltar")
-            print("9 - Mudar Senha")
+            print("9 - alterar senha")
             print("1 - Criar tarefas")
             print("2 - Consultar tarefas")
             print("3 - Alterar tarefas")
@@ -48,19 +48,26 @@ def make_login(member: Member):
                 print("5 - Adicionar Membro a um time")
                 print("6 - Gerar relatorio da equipe")
                 print("7 - vizualizar membros da equipe")
-            opcao = int(input(""))
+            opcao = int(input())
 
             atualizar()
 
             if opcao == 0:
                 return
+            
             elif opcao == 9:
-                member.alterar_senha()
-                
+                senha = input('Digite a nova senha: ')
+                member.alterar_senha(senha)
+
             elif  opcao == 1:
                 title = input("Digite o nome da tarefa: ")
                 description = input("Digite a descrição da tarefa: ")
+
+                for idx, user in enumerate(member_base):
+                    print(f'#{idx} nome: {user.name}\n')
+                
                 membro, membro_valido = busca_membro()
+
                 dono = membro
                 if not membro_valido:
                     print("Usuário não informado")
@@ -109,10 +116,13 @@ def make_login(member: Member):
             elif opcao == 5 and member.access_level == 1:
                 for idx, team in enumerate (team_base):
                     print(f"{idx} {team.team_name}")
-
+                
                 opcao = int(input("Digite o numero time: "))
                 time = team_base[opcao]
                 
+                for idx, user in enumerate(member_base):
+                    print(f'#{idx} nome: {user.name}\n')
+
                 membro, membro_valido = busca_membro()
                 if not membro_valido:
                     print("Usuário não informado")
@@ -136,13 +146,16 @@ def make_login(member: Member):
                 for membro in time.membros:
                     relatorio["total"] += len(membro.tasks)
                     for i in membro.tasks:
-                        if i.status == "Em Andamento":
+                        if i.status.lower() == "Em Andamento".lower():
                             relatorio["total_andamento"] += 1
-                        if i.status == "Atrasado":
+                        if i.status.lower() == "Atrasado".lower():
                             relatorio["total_atrasadas"] += 1
-                        if i.status == "Concluido":
+                        if i.status.lower() == "Concluido".lower():
                             relatorio["total_concluidas"] += 1
                 
+                for key in list(relatorio.keys()):
+                    print(f'{key}:{relatorio[key]}')
+
                 with open("Relatorio de produtividade.json", 'w') as arquivo_json:
                     json.dump(relatorio, arquivo_json)
 
