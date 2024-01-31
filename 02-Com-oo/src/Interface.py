@@ -23,7 +23,7 @@ def interface():
             senha = input("Digite sua senha: ")
             log_in = 0
             for member in member_base:
-                if member.name == usuario and member.get_senha == senha:
+                if member.name == usuario and member.senha == senha:
                     make_login(member)
                     log_in = 1
                     break

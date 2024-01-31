@@ -4,7 +4,7 @@ class Member:
     def __init__(self, name, access_level, senha):
         self.name = name
         self.access_level = access_level
-        self.senha = senha
+        self._senha = senha
         self.tasks = []
 
     def add_team(self, team):
@@ -19,8 +19,8 @@ class Member:
 
 
     @property
-    def get_senha(self):  # Getter
-        return self.senha  
+    def senha(self):  # Getter
+        return self._senha  
 
     def __str__(self):
         return f"Nome: {self.name}\nNivel de acesso: {self.access_level}\n"
