@@ -206,17 +206,26 @@ class Login(metaclass=SingletonBase):
         button_frame = tk.Frame(self.root)
         button_frame.pack()
 
-        buttons = [
-            ("Back", 0),
-            ("Create Task", 1),
-            ("View Tasks", 2),
-            ("Update Task", 3),
-            ("Create Team", 4),
-            ("Add Member to Team", 5),
-            ("Generate Team Report", 6),
-            ("View Team Members", 7),
-            ("Update Password", 8)
-        ]
+        if self.member.access_level == 1:
+            buttons = [
+                ("Back", 0),
+                ("Create Task", 1),
+                ("View Tasks", 2),
+                ("Update Task", 3),
+                ("Create Team", 4),
+                ("Add Member to Team", 5),
+                ("Generate Team Report", 6),
+                ("View Team Members", 7),
+                ("Update Password", 8)
+            ]
+        else:
+            buttons = [
+                ("Back", 0),
+                ("Create Task", 1),
+                ("View Tasks", 2),
+                ("Update Task", 3),
+                ("Update Password", 8)
+            ]
 
         for text, option in buttons:
             button = tk.Button(button_frame, text=text, command=lambda option=option: self.on_button_click(option))
