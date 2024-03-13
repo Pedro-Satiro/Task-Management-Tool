@@ -2,7 +2,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Optional
 
-# Definindo o abstract handler
+# Definindo o abstract handler 
 # Definindo a Forma de como os handlers devem ser criados, tipo forma de bolo
 class PurchaseHandler(ABC):
     def __init__(self) -> None:
